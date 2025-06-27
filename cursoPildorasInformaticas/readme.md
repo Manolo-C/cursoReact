@@ -41,7 +41,7 @@ Dependiendo la complejidad y tamaño del proyecto, se elige un determinado nivel
 >   - Extensibilidad.
 
 Utiliza Create React App si:
-- Prefieres
+
 >- **Vite**:  
 >   - Inicio y recargas más rápidas.
 >   - Menor uso de recursos.
