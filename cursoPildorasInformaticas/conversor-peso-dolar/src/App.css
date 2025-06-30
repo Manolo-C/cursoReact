@@ -1,0 +1,18 @@
+.titulo{
+  text-align: center;
+  text-decoration: solid;
+}
+
+.resultado{
+  text-align: center;
+  text-decoration: dotted;
+}
+
+.entrada{
+  text-align: center;
+}
+body{
+  background-image: url("../public/images.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
