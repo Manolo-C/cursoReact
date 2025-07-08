@@ -1,32 +1,41 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Contador } from "./components/MiComponente";
-import PropTypes from "prop-types";
+import { Contador } from "./components/MiComponente.tsx";
+import { Usuario } from "./Usuario.ts";
 
 function App() {
+  // PropTypes quedo deprecado, se reemplaza por TS.
+  type SaludoProps = {
+    usuario: Usuario;
+  };
+
   const usuario = {
-    nombre: "Fernando",
+    nombre: "Manuel",
     apellido: "Leunam",
     edad: 24,
     genero: "Masculino",
   };
 
-  function Saludo(props) {
+  function Saludo({ usuario }: SaludoProps) {
+    //Destructuracion
+    const { nombre, apellido, edad, genero } = usuario;
+
     return (
-      <h1>
-        Hola {props.usuario.nombre} {props.usuario.apellido}, tienes{" "}
-        <strong>{props.usuario.edad}</strong> anios y eres{" "}
-        {props.usuario.genero}
-      </h1>
+      <div>
+        {nombre ? (
+          <div>
+            <h1>
+              Hola {nombre} {apellido}!
+            </h1>
+            <h2>Edad: {edad}</h2>
+            <h2>Genero: {genero}</h2>
+          </div>
+        ) : (
+          <h1>No hay usuario valido</h1>
+        )}
+      </div>
     );
   }
-
-  // Esto es una advertencia al programador, no un "error" para el usuario.
-  /* Saludo.propTypes = {
-    usuario: PropTypes.shape({
-      nombre: PropTypes.string.isRequired
-    }).isRequired
-  } */
 
   return (
     <div className="App">

@@ -1,5 +1,6 @@
 import "./MiComponente.css";
 import { useState } from "react";
+
 const MiComponente = () => {
   return <div>Hola alumnos</div>;
 };
